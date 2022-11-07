@@ -1,0 +1,10 @@
+// Membuat method penjumlahan
+	public static int penjumlahan(int nilaiSatu, int nilaiDua) {
+        int hasil = nilaiSatu + nilaiDua;
+        return hasil;
+	}
+
+// Memanggil method penjumlahan
+	System.out.println(penjumlahan(5, 10)); // Output = 15
+
+
