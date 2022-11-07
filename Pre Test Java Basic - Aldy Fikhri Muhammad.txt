@@ -1,0 +1,11 @@
+1. Bukan.
+2. int angka = 7;
+3. System.out.print("Hello World");
+4. for (int i = 1; i <= 29; i++) { System.out.println(i); }
+5. 0
+6. static void cetakNama(int tanggal) {
+    for (int i = 1; i <= 31; i++) {
+	if (i == (tanggal*2)) { System.out.print("Aldy Fikhri Muhammad"); }
+	else { System.out.print(i); }
+  }
+ cetakNama(7)
