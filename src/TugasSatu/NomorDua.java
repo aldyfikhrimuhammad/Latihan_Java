@@ -13,7 +13,7 @@ public class NomorDua {
                 if (x == y) {
                     // Mencetak hasil
                     int hasil = x;
-                    System.out.println(hasil);
+                    System.out.print(hasil  +  " ");
                 }
             }
         }

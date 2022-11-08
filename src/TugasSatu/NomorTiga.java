@@ -11,10 +11,7 @@ public class NomorTiga {
 
         // Pengulangan untuk memeriksa nilai array
         for (int i = 0; i < arrAcak.length - 1; i++) {
-
-            // setiap i akan masuk ke nilai array yang lebih kecil
-            for(int j = i; j < arrAcak.length - 1; j++){
-
+            for(int j = i; j < arrAcak.length - 1; j++) {
                 // Memeriksa apakah arrAcak[i] lebih besar dari arrAcak[j + 1]
                 if(arrAcak[i] > arrAcak[j + 1]){
                     temp = arrAcak [j + 1];

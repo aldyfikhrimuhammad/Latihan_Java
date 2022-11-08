@@ -28,9 +28,9 @@ public class NomorSatu {
     }
 
     // Method untuk mencetak input user
-    static void cetakData(String firstName, String lastName, String birthDesc, String progLangFav){
+    static void cetakData(String firstName, String lastName, String birthDesc, String progLangFav) {
         System.out.println("Nama lengkap : " + firstName + " " + lastName);
         System.out.println("Tempat, tanggal lahir : " + birthDesc);
-        System.out.println("Bahas pemrograman favorit : " + progLangFav);
+        System.out.println("Bahasa pemrograman favorit : " + progLangFav);
     }
 }
