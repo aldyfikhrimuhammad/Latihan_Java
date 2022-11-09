@@ -4,9 +4,6 @@ import TugasTiga.BangunDatar.Lingkaran;
 
 public class Bola extends Lingkaran {
 
-    // variabel yang digunakan
-    int jariJari;
-
     // Constructor
     public Bola() {
     }
@@ -17,16 +14,10 @@ public class Bola extends Lingkaran {
         super.setJariJari(jariJari);
     }
 
-    // Getter
-    @Override
-    public int getJariJari() {
-        return super.getJariJari();
-    }
-
     // Method untuk menghitung volume
     @Override
     public void cetakHasil() {
-        int volume = (int) (4 / 3 * 3.14 * getJariJari() * getJariJari() * getJariJari());
+        int volume = (int) (4 / 3 * 3.14 * super.getJariJari() * super.getJariJari() * super.getJariJari());
         System.out.println("Volume Bola\t\t: " + volume);
     }
 }

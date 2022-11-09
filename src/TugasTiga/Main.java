@@ -16,7 +16,7 @@ public class Main {
         Scanner inputUser = new Scanner(System.in);
 
         // Variabel yang digunakan
-        int alas, tinggi;
+        int alas, tinggi, tinggiPrisma;
         int jariJari;
         int sisi;
 
@@ -130,6 +130,9 @@ public class Main {
                             System.out.print("Masukan Nilai Tinggi : ");
                             tinggi = inputUser.nextInt();
                             prisma.setTinggi(tinggi);
+                            System.out.print("Masukan Nilai Tinggi Prisma : ");
+                            tinggiPrisma = inputUser.nextInt();
+                            prisma.setTinggiPrisma(tinggiPrisma);
 
                             // Mencetak hasil
                             prisma.cetakHasil();

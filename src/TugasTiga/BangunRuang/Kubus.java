@@ -4,9 +4,6 @@ import TugasTiga.BangunDatar.Persegi;
 
 public class Kubus extends Persegi {
 
-    // variabel yang digunakan
-    int sisi;
-
     // Constructor
     public Kubus() {
     }
@@ -17,16 +14,10 @@ public class Kubus extends Persegi {
         super.setSisi(sisi);
     }
 
-    // Getter
-    @Override
-    public int getSisi() {
-        return super.getSisi();
-    }
-
     // Method untuk menghitung volume
     @Override
     public void cetakHasil() {
-        int volume = getSisi() * getSisi() * getSisi();
+        int volume = super.getSisi() * super.getSisi() * super.getSisi();
         System.out.println("Volume Kubus\t\t: " + volume);
     }
 

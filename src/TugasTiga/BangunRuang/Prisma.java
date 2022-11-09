@@ -5,26 +5,15 @@ import TugasTiga.BangunDatar.Segitiga;
 public class Prisma extends Segitiga {
 
     // Variabel yang digunakan
-    private int alas, tinggi;
+    private int tinggiPrisma;
 
-    // Setter
-    @Override
-    public void setAlas(int alas) {
-        this.alas = alas;
-    }
-    @Override
-    public void setTinggi(int tinggi) {
-        this.tinggi = tinggi;
+    public void setTinggiPrisma(int tinggiPrisma) {
+        this.tinggiPrisma = tinggiPrisma;
     }
 
     // Getter
-    @Override
-    public int getAlas() {
-        return alas;
-    }
-    @Override
-    public int getTinggi() {
-        return tinggi;
+    public int getTinggiPrisma() {
+        return tinggiPrisma;
     }
 
     // Method untuk menghitung volume
@@ -32,7 +21,7 @@ public class Prisma extends Segitiga {
     public void cetakHasil() {
         System.out.println("Nilai alas yang anda masukan\t: " + getAlas());
         System.out.println("Nilai tinggi yang anda masukan\t: " + getTinggi());
-        int volume = ((getAlas() * getTinggi() / 2) * getTinggi());
+        int volume = ((super.getAlas() * super.getTinggi() / 2) * getTinggiPrisma());
         System.out.println("Jumlah Volume Prisma : " + volume);
     }
 }
