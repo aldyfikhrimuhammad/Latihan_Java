@@ -30,7 +30,7 @@ public class Person {
         System.out.println("=== Data Student ===");
         System.out.println("Fullname\t\t: " + this.firstname + " " + this.lastName);
         System.out.println("Domicile\t\t: " + this.domicile);
-        System.out.println("Year Of Birth\t: " + (currentYear - this.yearOfBirth) + " years old");
+        System.out.println("Age\t\t\t\t: " + (currentYear - this.yearOfBirth) + " years old");
     }
 
 }

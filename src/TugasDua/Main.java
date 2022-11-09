@@ -104,7 +104,7 @@ public class Main {
         // Program apabila user memasukan input selain Y dan N
         while (!pilihanUser.equalsIgnoreCase("Y") && !pilihanUser.equalsIgnoreCase("N")) {
 
-            System.err.println("\n Pilihan tidak ada!\n Silahkan pilih Y atau N.");
+            System.err.println("\n The menu you selected does not exist!\n Please choose Y or N.");
             System.out.println("\n" + message + "(Y/N)");
             pilihanUser = terminalInput.nextLine();
 
