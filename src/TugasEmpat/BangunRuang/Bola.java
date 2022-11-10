@@ -18,13 +18,19 @@ public class Bola extends Lingkaran implements BangunRuang {
     // Method untuk karakteristik bangun
     @Override
     public void karakterBangunRuang() {
+        System.out.println("""
 
+                    === KARAKTER BANGUN ===\s
+                    1. Terdapat Jari-Jari dan Diameter
+                    2. Mempunyai 1 Bidang Lengkung
+                    3. Tidak Mempunyai Rusuk dan Titik Sudut"""
+        );
     }
 
     // Method untuk menghitung luas
     @Override
     public int hitungLuasBola(int jariJari) {
-        return BangunRuang.super.hitungLuasBola(jariJari);
+        return (int) (4 * 3.14 * super.getJariJari() * super.getJariJari());
     }
 
     // Method untuk menghitung volume
@@ -37,7 +43,10 @@ public class Bola extends Lingkaran implements BangunRuang {
     @Override
     public void cetakHasil() {
         int volume = hitungVolumeBola(getJariJari());
+        int luas = hitungLuasBola(getJariJari());
         System.out.println("Volume Bola\t\t: " + volume);
+        System.out.println("luas Bola\t\t: " + luas);
+        karakterBangunRuang();
     }
 
 }

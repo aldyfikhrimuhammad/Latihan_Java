@@ -18,13 +18,18 @@ public class Kubus extends Persegi implements BangunRuang {
     // Method untuk karakteristik bangun
     @Override
     public void karakterBangunRuang() {
+        System.out.println("""
 
+                    === KARAKTER BANGUN ===\s
+                    1. Mempunyai 12 Rusuk
+                    2. Semua Sudutnya Siku-Siku"""
+        );
     }
 
     // Method untuk menghitung luas
     @Override
     public int hitungLuasKubus(int sisi) {
-        return BangunRuang.super.hitungLuasKubus(sisi);
+        return 6 * super.hitungLuasPersegi(getSisi()) * super.hitungLuasPersegi(getSisi()) ;
     }
 
     // Method untuk menghitung volume
@@ -37,7 +42,10 @@ public class Kubus extends Persegi implements BangunRuang {
     @Override
     public void cetakHasil() {
         int volume = hitungVolumeKubus(getSisi());
+        int luas = hitungLuasKubus(getSisi());
         System.out.println("Volume Kubus\t\t: " + volume);
+        System.out.println("Luas Kubus\t\t\t: " + luas);
+        karakterBangunRuang();
     }
 
 }

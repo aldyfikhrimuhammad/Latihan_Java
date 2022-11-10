@@ -31,12 +31,31 @@ public class Segitiga implements BangunDatar {
     @Override
     public void gambarBangun() {
         System.out.println("=== SEGITIGA ===");
+//        int x = 5;
+//        for (int i = 1; i <= x; i++){
+//            for (int j = 4; j >= i; j--) {
+//                System.out.print(' ');
+//            }
+//            for (int k = 1; k <= i; k++){
+//                System.out.print('*');
+//            }
+//            for (int l = 1; l <= i - 1; l++){
+//                System.out.print('*');
+//            }
+//            System.out.println();
+//        }
     }
 
     // Method untuk karakteristik bangun
     @Override
     public void karakterBangunDatar() {
-        System.out.println("=== KARAKTER BANGUN ===");
+        System.out.println("""
+
+                    === KARAKTER BANGUN ===\s
+                    1. Mempunyai 3 Sudut yang Sama Besarnya
+                    2. Mempunyai 3 Sumbu Simetri Lipat
+                    3. Mempunyai 3 Sumbu Simetri Putar"""
+        );
     }
 
     // Method untuk menghitung luas
@@ -60,5 +79,6 @@ public class Segitiga implements BangunDatar {
         System.out.println("Luas Segitiga\t\t: " + luas);
         System.out.println("Keliling Segitiga\t: " + keliling);
         gambarBangun();
+        karakterBangunDatar();
     }
 }

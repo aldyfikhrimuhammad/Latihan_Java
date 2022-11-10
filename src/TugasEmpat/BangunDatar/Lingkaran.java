@@ -30,7 +30,12 @@ public class Lingkaran implements BangunDatar {
     // Method untuk karakteristik bangun
     @Override
     public void karakterBangunDatar() {
+        System.out.println("""
 
+                    === KARAKTER BANGUN ===\s
+                    1. Mempunyai Sudut 180 Derajat
+                    2. Mempunyai Diameter dan Jari-Jari"""
+        );
     }
 
     // Method untuk menghitung luas
@@ -53,6 +58,7 @@ public class Lingkaran implements BangunDatar {
         System.out.println("Luas Lingkaran\t\t: " + luas);
         System.out.println("Keliling Lingkaran\t: " + keliling);
         gambarBangun();
+        karakterBangunDatar();
     }
 
 }

@@ -25,12 +25,24 @@ public class Persegi implements BangunDatar {
     @Override
     public void gambarBangun() {
         System.out.println("===  PERSEGI ===");
+//        int besar_persegi = 0,i,j;
+//        for(i=1; i<=besar_persegi; i++) {
+//            for(j=1; j<=besar_persegi; j++) {
+//                System.out.print(i + " ");
+//            }
+//            System.out.println();
+//        }
     }
 
     // Method untuk karakteristik bangun
     @Override
     public void karakterBangunDatar() {
+        System.out.println("""
 
+                    === KARAKTER BANGUN ===\s
+                    1. Mempunyai Sisi Yang Sama Panjang
+                    2. Mempunyai 4 Sudut Siku-Siku"""
+        );
     }
 
     // Method untuk menghitung luas
@@ -53,6 +65,7 @@ public class Persegi implements BangunDatar {
         System.out.println("Luas Persegi\t\t: " + luas);
         System.out.println("Keliling Persegi\t: " + keliling);
         gambarBangun();
+        karakterBangunDatar();
     }
 
 }

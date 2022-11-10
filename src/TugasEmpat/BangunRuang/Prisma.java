@@ -20,13 +20,19 @@ public class Prisma extends Segitiga implements BangunRuang {
     // Method untuk karakteristik bangun
     @Override
     public void karakterBangunRuang() {
+        System.out.println("""
 
+                    === KARAKTER BANGUN ===\s
+                    1. Mempunyai 5 Sisi
+                    2. Mempunyai 6 Titik Sudut
+                    3. Mempunyai 9 Rusuk"""
+        );
     }
 
     // Method untuk menghitung luas permukaan
     @Override
     public int hitungLuasPrisma(int alas, int tinggi) {
-        return BangunRuang.super.hitungLuasPrisma(alas, tinggi);
+        return 2 * super.hitungLuasSegitiga(getAlas(), getTinggi()) + super.hitungKelilingSegitiga(getAlas(), getTinggi()) * getTinggiPrisma();
     }
 
     // Method untuk menghitung volume
@@ -38,8 +44,11 @@ public class Prisma extends Segitiga implements BangunRuang {
     // Method untuk mencetak hasil
     @Override
     public void cetakHasil() {
-        int volume = hitungVolumePrisma(getAlas(), getTinggi(), tinggiPrisma);
-        System.out.println("Jumlah Volume Prisma : " + volume);
+        int volume = hitungVolumePrisma(getAlas(), getTinggi(), getTinggiPrisma());
+        int luas = hitungLuasPrisma(getAlas(), getTinggi());
+        System.out.println("Jumlah Volume Prisma    : " + volume);
+        System.out.println("Jumlah luas Prisma      : " + luas);
+        karakterBangunRuang();
     }
 
 }
