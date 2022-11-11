@@ -11,19 +11,19 @@ public class Main {
         String fullName, domicile, id, courseName, room;
         int sks;
 
-        // Inisilisasi object List
-        ArrayList<String> dataStudent = new ArrayList<String>();
-
-        // Inisilisasi object Map
-        HashMap<String, Integer> dataLearningSks = new HashMap<String, Integer>();
-        HashMap<String, String> dataLearningRoom = new HashMap<String, String>();
-
         // Membuka object Scanner
         Scanner inputUser = new Scanner(System.in);
 
         // Membuka object Person dan Student
         Person person01 = new Person();
         Student student01 = new Student();
+
+        // Inisilisasi object List
+        ArrayList<Student> dataStudent = new ArrayList<Student>();
+
+        // Inisilisasi object Map
+        HashMap<String, Integer> dataLearningSks = new HashMap<String, Integer>();
+        HashMap<String, String> dataLearningRoom = new HashMap<String, String>();
 
         // Mengulang Menu
         boolean continueProgram = true;
@@ -61,9 +61,7 @@ public class Main {
                     student01.setDomicile(domicile);
 
                     // Add data
-                    dataStudent.add(student01.getFullName());
-                    dataStudent.add(student01.getId());
-                    dataStudent.add(student01.getDomicile());
+                    dataStudent.add(student01);
                 }
 
                 case 2 -> {
@@ -76,6 +74,7 @@ public class Main {
                     student01.setCourseName(courseName);
                     System.out.print("Enter total sks   : ");
                     sks = inputUser.nextInt();
+                    inputUser.nextLine();
                     student01.setSks(sks);
                     System.out.print("Enter room id     : ");
                     room = inputUser.nextLine();
@@ -84,15 +83,16 @@ public class Main {
                     // Put data
                     dataLearningSks.put(student01.getCourseName(), student01.getSks());
                     dataLearningRoom.put(student01.getCourseName(), student01.getRoom());
-                    // Cetak data
-                    student01.printData();
                 }
                 case 3 -> {
 
                     System.out.println(" === All Data ===");
 
                     // Cetak data
-                    student01.printData();
+                    System.out.println(dataStudent);
+                    for ( Student data : dataStudent ) {
+                        data.printData();
+                    }
                 }
 
                 default -> System.out.println("Menu yang anda pilih tidak tersedia! Silahkan pilih menu lain.");

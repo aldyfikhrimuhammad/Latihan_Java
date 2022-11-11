@@ -23,7 +23,7 @@ public class Student extends Person implements Services {
 
     // Getter
     public String getFullName() {
-        if (getFullSks() == 144 ) {
+        if (getFullSks() >= 144 ) {
             return fullName + " S.T";
         } else {
             return fullName;
