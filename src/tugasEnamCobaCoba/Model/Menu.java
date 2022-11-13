@@ -54,7 +54,6 @@ public class Menu {
     // Method untuk menampilkan daftar menu
     public void daftarMenu() {
         System.out.println("""
-
                     ========== Menu Makanan Sehat ==========\s
                     1. Ayam Goreng              -- Rp 12000
                     2. Ikan Bakar               -- Rp 18000
@@ -63,7 +62,6 @@ public class Menu {
         );
 
         System.out.println("""
-
                     ========== Menu Minuman Cerdas ==========\s
                     1. Teh Manis                -- Rp 8000
                     2. Es Jeruk                 -- Rp 10000
@@ -71,14 +69,12 @@ public class Menu {
                     4. Air Mineral              -- Rp 5000"""
         );
         System.out.println("""
-
                     ========== Menu Paket Bahagia ==========\s
                     1. Paket Lengkap Ayam       -- Rp 20000
                     2. Paket Lengkap Ikan       -- Rp 28000
                     3. Paket Campur 1           -- Rp 30000
                     4. Paket Campur 2           -- Rp 28000"""
         );
-
     }
 
         // Method cetak pesanan

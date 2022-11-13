@@ -16,4 +16,6 @@ public interface PaymentServices<T, K> {
     void delete (K id);
     void getMenu(int index);
 
+    default void recieptPembayaran(int index) {
+    }
 }

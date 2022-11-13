@@ -5,8 +5,6 @@ import tugasEnamCobaCoba.Model.Order;
 import tugasEnamCobaCoba.Repository.MenuDao;
 import tugasEnamCobaCoba.Repository.OrderDao;
 import tugasEnamCobaCoba.Services.PaymentServices;
-import tugasLimaSolution.service.StudentService;
-import tugasLimaSolution.service.StudentServiceImpl;
 
 // Import library
 import java.util.*;
@@ -31,6 +29,10 @@ public class MenuController {
 
         Order order = new Order(0, 0);
         orderDao.save(order);
+
+        // Instance repository
+        menuDao = new MenuDao();
+        orderDao = new OrderDao();
 
         do {
             // Main Menu
@@ -86,13 +88,11 @@ public class MenuController {
                                 menuDao.getMenu(0);
                                 System.out.println(menuDao.findAll());
 
-                                System.out.println(index);
                                 System.out.print("Ingin menambahkan menu lain? (y / n): ");
                                 opsi = inputUser.nextLine().toLowerCase();
                             }
                             case 2 -> {
                                 System.out.println("""
-
                     ========== Menu Minuman Cerdas ==========\s
                     1. Teh Manis                -- Rp 8000
                     2. Es Jeruk                 -- Rp 10000
@@ -103,7 +103,6 @@ public class MenuController {
                             }
                             case 3 -> {
                                 System.out.println("""
-
                     ========== Menu Paket Bahagia ==========\s
                     1. Paket Lengkap Ayam       -- Rp 20000
                     2. Paket Lengkap Ikan       -- Rp 28000
@@ -123,21 +122,6 @@ public class MenuController {
                 case 3 -> {
                     while (opsi.equals("y")) {
                         System.out.println("\n========== PEMBAYARAN ==========");
-                        System.out.print("Masukkan nomor index mahasiswa: ");
-                        int index = inputUser.nextInt();
-                        inputUser.nextLine();
-//                        studentService.getStudent(index);
-                        System.out.print("Masukkan mata kuliah: ");
-                        String matkul = inputUser.nextLine();
-                        System.out.print("Masukkan bobot sks: ");
-                        int sks = inputUser.nextInt();
-                        inputUser.nextLine();
-                        System.out.print("Masukkan ruangan: ");
-                        String ruangan = inputUser.nextLine();
-
-//                        studentService.learningPlan(matkul, sks, ruangan, index);
-                        System.out.println(index);
-                        System.out.print("Ingin menambahkan data krs lain? (y/n): ");
                         opsi = inputUser.nextLine().toLowerCase();
                     }
                     opsi = "y";
