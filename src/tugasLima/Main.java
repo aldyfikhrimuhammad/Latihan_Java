@@ -19,7 +19,7 @@ public class Main {
         Student student01 = new Student();
 
         // Inisilisasi object List
-        ArrayList<Student> dataStudent = new ArrayList<Student>();
+        ArrayList<Student> dataStudent = new ArrayList<>();
 
         // Inisilisasi object Map
         HashMap<String, Integer> dataLearningSks = new HashMap<String, Integer>();
@@ -89,7 +89,6 @@ public class Main {
                     System.out.println(" === All Data ===");
 
                     // Cetak data
-                    System.out.println(dataStudent);
                     for ( Student data : dataStudent ) {
                         data.printData();
                     }

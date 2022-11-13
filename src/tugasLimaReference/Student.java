@@ -73,6 +73,11 @@ public class Student extends Person implements StudentService {
     }
 
     @Override
+    public void getStudent(int index) {
+
+    }
+
+    @Override
     public String getFullname() {
         if (getTotalSks() >= 144) {
             return super.getFullname() + ", S.Kom";

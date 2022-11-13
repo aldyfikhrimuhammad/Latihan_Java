@@ -74,6 +74,7 @@ public class Student extends Person implements Services {
     // Method menampilkan seluruh data
     public void printData() {
 
+        System.out.println("==========");
         System.out.println("Full Name       : " + getFullName());
         System.out.println("ID              : " + getId());
         System.out.println("Domicile        : " + getDomicile());
@@ -82,5 +83,6 @@ public class Student extends Person implements Services {
         System.out.println("Room ID         : " + getRoom());
         System.out.println("SKS Amount      : " + getSks());
         System.out.println("Total SKS       : " + getFullSks());
+        System.out.println("==========");
     }
 }
