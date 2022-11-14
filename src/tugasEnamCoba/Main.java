@@ -20,13 +20,25 @@ public class Main {
 
     public void chooseOption() {
 
-        // Main Menu
-        System.out.println("""
+        if (totalPesanan.findAll() == null) {
+            // Main Menu
+            System.out.println("""
                     \n========== Warung Sehat, Cerdas, dan Bahagia ==========\s
                     1. Daftar Menu
                     2. Pemesanan
                     3. Pembayaran"""
-        );
+            );
+        } else {
+            // Main Menu
+            System.out.println("""
+                    \n========== Warung Sehat, Cerdas, dan Bahagia ==========\s
+                    1. Daftar Menu
+                    2. Pemesanan
+                    3. Pembayaran"""
+            );
+            // Mencetak pesanan
+            System.out.print("Pesanan Anda : " + totalPesanan.findAll() + "\n");
+        }
 
         // Mengambil input user
         System.out.print("Pilih Menu : ");
@@ -110,8 +122,13 @@ public class Main {
                     ========== PEMESANAN ==========\s
                     1. Makanan
                     2. Minuman
-                    3. Paket"""
+                    3. Paket
+                    4. Ubah Pesanan
+                    5. Hapus Pesanan"""
                         );
+
+                        // Mencetak pesanan
+                        System.out.print("Pesanan Anda : " + totalPesanan.findAll() + "\n");
 
                         System.out.print("Pilih Menu : ");
                         int pilihMenu = inputUser.nextInt();
@@ -200,17 +217,59 @@ public class Main {
                                     main.lanjutkanProgram = inputUser.nextLine().toLowerCase();
                                 }
                             }
+                            case 4 -> {
+
+                                while (main.lanjutkanProgram.equals("y")) {
+                                    System.out.println("\n========== Ubah Pesanan ==========");
+
+                                    // Mengambil input user
+                                    System.out.print("Pilih pesanan Yang Akan diubah : ");
+                                    int index = inputUser.nextInt();
+                                    inputUser.nextLine();
+                                    paket.setTotalPesanan(index);
+
+                                    // Update data pesanan
+//                                    totalPesanan.update(index, );
+
+                                    // Mencetak pesanan
+                                    System.out.print("Pesanan Anda : " + totalPesanan.findAll() + "\n");
+
+                                    System.out.print("Ingin mengubah menu lain? (y / n): ");
+                                    main.lanjutkanProgram = inputUser.nextLine().toLowerCase();
+                                }
+                            }
+                            case 5 -> {
+                                while (main.lanjutkanProgram.equals("y")) {
+                                    System.out.println("\n========== Hapus Pesanan ==========");
+
+                                    // Mengambil input user
+                                    System.out.print("Pilih pesanan yang akan dihapus : ");
+                                    int index = inputUser.nextInt();
+                                    inputUser.nextLine();
+                                    paket.setTotalPesanan(index);
+
+                                    // Delete data pesanan
+                                    totalPesanan.delete(index);
+
+                                    // Mencetak pesanan
+                                    System.out.print("Pesanan Anda : " + totalPesanan.findAll() + "\n");
+
+                                    System.out.print("Ingin menghapus pesanan lain? (y / n): ");
+                                    main.lanjutkanProgram = inputUser.nextLine().toLowerCase();
+                                }
+                            }
                             default -> System.out.println("Menu tidak tersedia!");
                         }
                     }
-
-                    // Mencetak pesanan
-                    System.out.print("Pesanan Anda : " + totalPesanan.findAll() + "\n");
                     
                     main.lanjutkanProgram = "y";
                 }
                 case 3 -> {
                     System.out.println("\n========== PEMBAYARAN ==========");
+
+                    // Mencetak jumlah pesanan
+                    System.out.print("Pesanan Anda : " + totalPesanan.findAll() + "\n");
+
                 }
                 default -> {
                 }
