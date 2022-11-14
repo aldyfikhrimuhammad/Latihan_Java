@@ -2,16 +2,18 @@ package tugasEnamCoba;
 
 import java.util.Scanner;
 
-import tugasEnamCoba.service.Cashier;
-import tugasEnamCoba.service.CashierImp;
+import tugasEnamCoba.model.Order;
+import tugasEnamCoba.service.Payment;
+import tugasEnamCoba.service.PaymentImp;
 import tugasEnamCoba.model.Menu;
 
 public class Main {
 
     // Instance object dan variabel yang dibutuhkan
-    private static Cashier<Menu, Integer> makananDao;
-    private static Cashier<Menu, Integer> minumanDao;
-    private static Cashier<Menu, Integer> paketDao;
+    private static Payment<Menu, Integer> makananDao;
+    private static Payment<Menu, Integer> minumanDao;
+    private static Payment<Menu, Integer> paketDao;
+    private static Payment<Menu, Integer> totalPesanan;
     static Scanner inputUser = new Scanner(System.in);
     static Integer opsi;
     String lanjutkanProgram = "y";
@@ -36,9 +38,10 @@ public class Main {
 
         // Instance object yang diperlukan
         Main main = new Main();
-        makananDao = new CashierImp();
-        minumanDao = new CashierImp();
-        paketDao = new CashierImp();
+        makananDao = new PaymentImp();
+        minumanDao = new PaymentImp();
+        paketDao = new PaymentImp();
+        totalPesanan = new PaymentImp();
 
         // Input data makanan sebagai menu
         Menu makanan = new Menu("Ayam Goreng", 12000);
@@ -49,7 +52,6 @@ public class Main {
         makananDao.save(makanan);
         makanan = new Menu("Sate Kambing", 25000);
         makananDao.save(makanan);
-        System.out.println(makananDao.findAll());
 
         // Input data minuman sebagai menu
         Menu minuman = new Menu("Teh Manis", 8000);
@@ -60,7 +62,6 @@ public class Main {
         minumanDao.save(minuman);
         minuman = new Menu("Air Mineral", 5000);
         minumanDao.save(minuman);
-        System.out.println(minumanDao.findAll());
 
         // Input data paket sebagai menu
         Menu paket = new Menu("Paket Lengkap Ayam", 20000);
@@ -71,7 +72,6 @@ public class Main {
         paketDao.save(paket);
         paket = new Menu("Paket Campur 2", 28000);
         paketDao.save(paket);
-        System.out.println(paketDao.findAll());
 
         do {
             main.chooseOption();
@@ -129,9 +129,24 @@ public class Main {
                                         System.out.println(a + ". " + makananMenu);
                                     }
 
+                                    // Mengambil input user
+                                    System.out.print("Pilih Makanan : ");
+                                    int index = inputUser.nextInt();
+                                    inputUser.nextLine();
+                                    makanan.setTotalPesanan(index);
+
+                                    // Save data pesanan
+                                     totalPesanan.save(makananDao.findById(makanan.getTotalPesanan()));
+
+                                     // Mencetak pesanan
+                                    System.out.print("Pesanan Anda : " + totalPesanan.findAll() + "\n");
+
                                     System.out.print("Ingin menambahkan menu lain? (y / n): ");
                                     main.lanjutkanProgram = inputUser.nextLine().toLowerCase();
                                 }
+
+                                // Mencetak pesanan
+                                System.out.print("Pesanan Anda : " + totalPesanan.findAll() + "\n");
                             }
                             case 2 -> {
 
@@ -142,6 +157,18 @@ public class Main {
                                         b++;
                                         System.out.println(b + ". " + minumanMenu);
                                     }
+
+                                    // Mengambil input user
+                                    System.out.print("Pilih Minuman : ");
+                                    int index = inputUser.nextInt();
+                                    inputUser.nextLine();
+                                    minuman.setTotalPesanan(index);
+
+                                    // Save data pesanan
+                                    totalPesanan.save(minumanDao.findById(minuman.getTotalPesanan()));
+
+                                    // Mencetak pesanan
+                                    System.out.print("Pesanan Anda : " + totalPesanan.findAll() + "\n");
 
                                     System.out.print("Ingin menambahkan menu lain? (y / n): ");
                                     main.lanjutkanProgram = inputUser.nextLine().toLowerCase();
@@ -157,6 +184,18 @@ public class Main {
                                         System.out.println(c + ". " + paketMenu);
                                     }
 
+                                    // Mengambil input user
+                                    System.out.print("Pilih Paket : ");
+                                    int index = inputUser.nextInt();
+                                    inputUser.nextLine();
+                                    paket.setTotalPesanan(index);
+
+                                    // Save data pesanan
+                                    totalPesanan.save(paketDao.findById(paket.getTotalPesanan()));
+
+                                    // Mencetak pesanan
+                                    System.out.print("Pesanan Anda : " + totalPesanan.findAll() + "\n");
+
                                     System.out.print("Ingin menambahkan menu lain? (y / n): ");
                                     main.lanjutkanProgram = inputUser.nextLine().toLowerCase();
                                 }
@@ -164,6 +203,10 @@ public class Main {
                             default -> System.out.println("Menu tidak tersedia!");
                         }
                     }
+
+                    // Mencetak pesanan
+                    System.out.print("Pesanan Anda : " + totalPesanan.findAll() + "\n");
+                    
                     main.lanjutkanProgram = "y";
                 }
                 case 3 -> {

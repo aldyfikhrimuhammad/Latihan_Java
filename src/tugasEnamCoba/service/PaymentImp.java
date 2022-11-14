@@ -4,7 +4,7 @@ import java.util.List;
 
 import tugasEnamCoba.model.Menu;
 
-public class CashierImp implements Cashier<Menu, Integer> {
+public class PaymentImp implements Payment<Menu, Integer> {
 
         // Instance object List
         List<Menu> menuDao = new ArrayList<>();

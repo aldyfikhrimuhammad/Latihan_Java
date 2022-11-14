@@ -2,7 +2,7 @@ package tugasEnamCoba.service;
 
 import java.util.List;
 
-public interface Cashier<T, K> {
+public interface Payment<T, K> {
 
     // CRUD methods
     List<T> findAll();
