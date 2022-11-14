@@ -150,10 +150,11 @@ public class Main {
                                     System.out.print("Pilih Makanan : ");
                                     int index = inputUser.nextInt();
                                     inputUser.nextLine();
-                                    makanan.setTotalPesanan(index);
+                                    makanan.setTotalPesanan(index - 1);
 
                                     // Save data pesanan
-                                     totalPesanan.save(makananDao.findById(makanan.getTotalPesanan()));
+                                    totalPesanan.save(makananDao.findById(makanan.getTotalPesanan()));
+                                    System.out.println("Pesanan berhasil ditambahkan!");
 
                                      // Mencetak pesanan
                                     System.out.print("Pesanan Anda : " + totalPesanan.findAll() + "\n");
@@ -179,10 +180,11 @@ public class Main {
                                     System.out.print("Pilih Minuman : ");
                                     int index = inputUser.nextInt();
                                     inputUser.nextLine();
-                                    minuman.setTotalPesanan(index);
+                                    minuman.setTotalPesanan(index - 1);
 
                                     // Save data pesanan
                                     totalPesanan.save(minumanDao.findById(minuman.getTotalPesanan()));
+                                    System.out.println("Pesanan berhasil ditambahkan!");
 
                                     // Mencetak pesanan
                                     System.out.print("Pesanan Anda : " + totalPesanan.findAll() + "\n");
@@ -205,10 +207,11 @@ public class Main {
                                     System.out.print("Pilih Paket : ");
                                     int index = inputUser.nextInt();
                                     inputUser.nextLine();
-                                    paket.setTotalPesanan(index);
+                                    paket.setTotalPesanan(index - 1);
 
                                     // Save data pesanan
                                     totalPesanan.save(paketDao.findById(paket.getTotalPesanan()));
+                                    System.out.println("Pesanan berhasil ditambahkan!");
 
                                     // Mencetak pesanan
                                     System.out.print("Pesanan Anda : " + totalPesanan.findAll() + "\n");
@@ -222,16 +225,20 @@ public class Main {
                                 while (main.lanjutkanProgram.equals("y")) {
                                     System.out.println("\n========== Ubah Pesanan ==========");
 
+                                    // Mencetak pesanan
+                                    System.out.print("Pesanan Anda : " + totalPesanan.findAll() + "\n");
+
                                     // Mengambil input user
                                     System.out.print("Pilih pesanan Yang Akan diubah : ");
                                     int index = inputUser.nextInt();
                                     inputUser.nextLine();
-                                    paket.setTotalPesanan(index);
+                                    paket.setTotalPesanan(index - 1);
 
                                     // Update data pesanan
 //                                    totalPesanan.update(index, );
+                                    System.out.println("Pesanan berhasil diubah!");
 
-                                    // Mencetak pesanan
+                                    // Mencetak pesanan setelah terubah
                                     System.out.print("Pesanan Anda : " + totalPesanan.findAll() + "\n");
 
                                     System.out.print("Ingin mengubah menu lain? (y / n): ");
@@ -242,16 +249,20 @@ public class Main {
                                 while (main.lanjutkanProgram.equals("y")) {
                                     System.out.println("\n========== Hapus Pesanan ==========");
 
+                                    // Mencetak pesanan
+                                    System.out.print("Pesanan Anda : " + totalPesanan.findAll() + "\n");
+
                                     // Mengambil input user
                                     System.out.print("Pilih pesanan yang akan dihapus : ");
                                     int index = inputUser.nextInt();
                                     inputUser.nextLine();
-                                    paket.setTotalPesanan(index);
+                                    paket.setTotalPesanan(index - 1);
 
                                     // Delete data pesanan
                                     totalPesanan.delete(index);
+                                    System.out.println("Pesanan berhasil dihapus!");
 
-                                    // Mencetak pesanan
+                                    // Mencetak pesanan setelah terhapus
                                     System.out.print("Pesanan Anda : " + totalPesanan.findAll() + "\n");
 
                                     System.out.print("Ingin menghapus pesanan lain? (y / n): ");
@@ -269,6 +280,7 @@ public class Main {
 
                     // Mencetak jumlah pesanan
                     System.out.print("Pesanan Anda : " + totalPesanan.findAll() + "\n");
+                    System.out.println();
 
                 }
                 default -> {
